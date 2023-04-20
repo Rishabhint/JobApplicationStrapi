@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_post_applicants",
+  "info": {
+    "singularName": "job-post-applicant",
+    "pluralName": "job-post-applicants",
+    "displayName": "Job Post Applicant"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::job-applicant.job-applicant",
+      "inversedBy": "job_post_applicant"
+    },
+    "coverLetter": {
+      "type": "text"
+    },
+    "portfolioLink": {
+      "type": "string"
+    },
+    "otherLinks": {
+      "type": "text"
+    },
+    "skills": {
+      "type": "json"
+    }
+  }
+}

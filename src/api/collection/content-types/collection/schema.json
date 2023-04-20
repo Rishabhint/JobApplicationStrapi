@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Category": {
+      "type": "string"
+    },
+    "job_posting": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::job-posting.job-posting",
+      "inversedBy": "categories"
+    }
+  }
+}

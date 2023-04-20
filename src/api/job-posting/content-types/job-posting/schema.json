@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_postings",
+  "info": {
+    "singularName": "job-posting",
+    "pluralName": "job-postings",
+    "displayName": "Job Posting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jobTitle": {
+      "type": "string"
+    },
+    "jobDescription": {
+      "type": "text"
+    },
+    "jobType": {
+      "type": "enumeration",
+      "enum": [
+        "partTime",
+        "fullTime",
+        "contract",
+        "freelance",
+        "internship"
+      ]
+    },
+    "jobRequirements": {
+      "type": "json"
+    },
+    "jobResponsibilities": {
+      "type": "json"
+    },
+    "jobBenefits": {
+      "type": "json"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "job_posting"
+    }
+  }
+}

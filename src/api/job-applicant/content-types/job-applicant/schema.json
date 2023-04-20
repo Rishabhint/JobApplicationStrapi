@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_applicants",
+  "info": {
+    "singularName": "job-applicant",
+    "pluralName": "job-applicants",
+    "displayName": "Job Applicant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "biginteger",
+      "required": true
+    },
+    "educationAndQualification": {
+      "type": "json",
+      "required": true
+    },
+    "employmentHistory": {
+      "type": "json",
+      "required": true
+    },
+    "skillsAndAbility": {
+      "type": "json",
+      "required": true
+    },
+    "reference": {
+      "type": "json",
+      "required": true
+    },
+    "resume": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "job_post_applicant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::job-post-applicant.job-post-applicant",
+      "mappedBy": "user"
+    }
+  }
+}
